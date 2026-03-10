@@ -1,0 +1,101 @@
+
+    <div class="chat-layout">
+          <button class="sidebar-toggle" (click)="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+      <!-- Sidebar -->
+      <div class="sidebar" [class.sidebar-collapsed]="sidebarCollapsed">
+        <div class="sidebar-header">
+          <button class="btn btn-primary w-100" (click)="startNewChat()">
+            <i class="fas fa-plus me-2"></i>New Chat
+          </button>
+        </div>
+        <div class="sidebar-content">
+          <div class="chat-sessions">
+            <div 
+              *ngFor="let session of chatSessions" 
+              class="chat-session-item"
+              [class.active]="currentSessionId === session.variables?.sessionId"
+              (click)="loadChatSession(session.variables?.sessionId)"
+            >
+              <i class="fas fa-comment me-2"></i>
+              <span>Chat {{ session.variables.chatTopic }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Chat Area -->
+      <div class="chat-container" [class.sidebar-collapsed]="sidebarCollapsed">
+        <!-- Chat Header -->
+        <div class="chat-header">
+          <h1 class="app-title">C8 Banking chat</h1>
+          <button class="logout-btn" (click)="logout()" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="messages-container" #messagesContainer>
+          <div class="messages-content">
+            <div *ngFor="let message of messages" class="message-wrapper">
+              <div 
+                class="message"
+                [class.user-message]="message.user"
+                [class.bot-message]="!message.user"
+                [class.thinking-message]="message.thinking"
+              >
+                <div class="message-content">
+                  <span *ngIf="message.thinking" class="thinking-dots">{{ message.message }}</span>
+                  <span *ngIf="!message.thinking">
+                    @if (message.contentHtml) {
+                      <span [innerHTML]="message.contentHtml"></span>
+                    } @else {
+                      {{ message.message }}
+                    }
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+          <div class="input-container">
+            <button class="input-icon left" (click)="fileInput.click()" title="Attach files">
+              <i class="fas fa-paperclip"></i>
+            </button>
+            <textarea 
+              [(ngModel)]="userInput" 
+              placeholder="Type your message..."
+              (keydown)="onKeyDown($event)"
+              [disabled]="isLoading"
+            ></textarea>
+            <button 
+              class="input-icon right" 
+              (click)="sendMessage()" 
+              [disabled]="!userInput.trim() || isLoading"
+              title="Send message"
+            >
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <input 
+              #fileInput 
+              type="file" 
+              class="file-input" 
+              multiple 
+              (change)="onFileSelected($event)"
+            >
+          </div>
+          <div *ngIf="selectedFiles.length > 0" class="selected-files">
+            <div *ngFor="let file of selectedFiles; let i = index" class="file-tag">
+              <span>{{ file.name }}</span>
+              <button (click)="removeFile(i)" class="remove-file">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

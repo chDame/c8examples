@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_18jxukq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="9b0b274" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <bpmn:process id="chatbot" name="chatbot chat agent" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="ai-agent-chat-initial-request" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0qg6me5</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:adHocSubProcess id="AI_CustomerSupportAgent" name="Customer Support Agent" zeebe:modelerTemplate="io.camunda.connectors.agenticai.aiagent.jobworker.v1" zeebe:modelerTemplateVersion="3" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNBNTZFRkYiLz4KPG1hc2sgaWQ9InBhdGgtMi1vdXRzaWRlLTFfMTg1XzYiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjQiIHk9IjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siPgo8cmVjdCBmaWxsPSJ3aGl0ZSIgeD0iNCIgeT0iNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIvPgo8L21hc2s+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC4wMTA1IDEyLjA5ODdDMTguNDkgMTAuNTg5NCAxNy4xNTk0IDguMTA4MTQgMTYuMTc5OSA2LjAxMTAzQzE2LjE1MiA2LjAwNDUxIDE2LjExNzYgNiAxNi4wNzk0IDZDMTYuMDQxMSA2IDE2LjAwNjYgNi4wMDQ1MSAxNS45Nzg4IDYuMDExMDRDMTQuOTk5NCA4LjEwODE0IDEzLjY2OTcgMTAuNTg4OSAxMi4xNDgxIDEyLjA5ODFDMTAuNjI2OSAxMy42MDcxIDguMTI1NjggMTQuOTI2NCA2LjAxMTU3IDE1Ljg5ODFDNi4wMDQ3NCAxNS45MjYxIDYgMTUuOTYxMSA2IDE2QzYgMTYuMDM4NyA2LjAwNDY4IDE2LjA3MzYgNi4wMTE0NCAxNi4xMDE0QzguMTI1MTkgMTcuMDcyOSAxMC42MjYyIDE4LjM5MTkgMTIuMTQ3NyAxOS45MDE2QzEzLjY2OTcgMjEuNDEwNyAxNC45OTk2IDIzLjg5MiAxNS45NzkxIDI1Ljk4OUMxNi4wMDY4IDI1Ljk5NTYgMTYuMDQxMSAyNiAxNi4wNzkzIDI2QzE2LjExNzUgMjYgMTYuMTUxOSAyNS45OTU0IDE2LjE3OTYgMjUuOTg5QzE3LjE1OTEgMjMuODkyIDE4LjQ4ODggMjEuNDExIDIwLjAwOTkgMTkuOTAyMU0yMC4wMDk5IDE5LjkwMjFDMjEuNTI1MyAxOC4zOTg3IDIzLjk0NjUgMTcuMDY2OSAyNS45OTE1IDE2LjA4MjRDMjUuOTk2NSAxNi4wNTkzIDI2IDE2LjAzMSAyNiAxNS45OTk3QzI2IDE1Ljk2ODQgMjUuOTk2NSAxNS45NDAzIDI1Ljk5MTUgMTUuOTE3MUMyMy45NDc0IDE0LjkzMjcgMjEuNTI1OSAxMy42MDEgMjAuMDEwNSAxMi4wOTg3IiBzdHJva2U9IiM0OTFEOEIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgbWFzaz0idXJsKCNwYXRoLTItb3V0c2lkZS0xXzE4NV82KSIvPgo8L3N2Zz4K">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda.agenticai:aiagent-job-worker:1" retries="3" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=&#34;Finding best approach&#34;" target="chatbotThinking" />
+          <zeebe:input source="bedrock" target="provider.type" />
+          <zeebe:input source="us-east-1" target="provider.bedrock.region" />
+          <zeebe:input source="credentials" target="provider.bedrock.authentication.type" />
+          <zeebe:input source="{{secrets.AWS_ACCESS_KEY_ID}}" target="provider.bedrock.authentication.accessKey" />
+          <zeebe:input source="{{secrets.AWS_ACCESS_KEY_SECRET}}" target="provider.bedrock.authentication.secretKey" />
+          <zeebe:input source="us.anthropic.claude-sonnet-4-20250514-v1:0" target="provider.bedrock.model.model" />
+          <zeebe:input source="=5000" target="provider.bedrock.model.parameters.maxTokens" />
+          <zeebe:input source="=0.2" target="provider.bedrock.model.parameters.temperature" />
+          <zeebe:input source="=0.1" target="provider.bedrock.model.parameters.topP" />
+          <zeebe:input source="=&#34;&#10;You are a chatbot agent.&#10;Decide which tool to call for each customer message.&#10;If the message is ambiguous, small talk, or lacks a clear intent, FIRST call Tool_AskCustomer to politely clarify their need. Only call Tool_InformCustomer to deliver information that does not ask a question and should automatically be followed by Tool_AskCustomer to ask if customer needs anything else. Tool_InformCustomer will be used as a terminal tool, to thank customer for passing by, only if the user express the desire to close the session.&#10;Once you have a good understanding of customer request, the first tool you should call is Tool_defineChatTopic. You should call it only once.&#10;&#10;CRITICAL OUTPUT RULES&#10;- Always invoke tools via function/tool-calling. Do NOT print tool JSON in content.&#10;- Prefer calling tools over free text. Only write content through the communication tools.&#10;- Customer communication rule:&#10;  * If your reply contains a QUESTION (even a short one), you MUST use Tool_AskCustomer—not Tool_InformCustomer.&#10;  * Use Tool_InformCustomer only for non-question statements that dont expect a reply and to thank customer as a terminal tool.&#10;  * IMPORTANT: If you called a specialized sub-agent (Account Support Agent, Loan Support Agent) and that call is not rejected, that sub-agent handles its own customer communication and you DO NOT call Tool_AskCustomer or Tool_InformCustomer afterward. The sub-agent has already handled all customer communication.&#10;  * If no sub-agent ran and you plan to close the task, ensure the customer received a summary via Tool_InformCustomer.&#10;&#10;TOOL SELECTION &#38; ORDERING&#10;- Inspect the available tools and choose the best tool; call multiple tools if needed.&#10;- If intent is unclear → Tool_AskCustomer until it is clarified.&#10;&#10;PRIVACY&#10;- Treat the sender as a customer. Never invent PII.&#10;- Treat the customer as authenticated. His name is in the author attribute.&#10;&#10;SELF-CHECK BEFORE RESPONDING&#10;- Did I call a specialized sub-agent (CallActivity_AccountSupportAgent, CallActivity_LoanSupportAgent) that handles its own customer communication? If yes → DO NOT call Tool_AskCustomer or Tool_InformCustomer afterward. End the task cleanly.&#10;- Does my message include a question AND no sub-agent with communication was called? If yes → Tool_AskCustomer.&#10;- Did only tools without customer communication run, and am I about to close? If yes → ensure I called Tool_InformCustomer in this run first.&#10;&#34;" target="data.systemPrompt.prompt" />
+          <zeebe:input source="=userRequest" target="data.userPrompt.prompt" />
+          <zeebe:input source="=userDocuments" target="data.userPrompt.documents" />
+          <zeebe:input source="=agent.context" target="agentContext" />
+          <zeebe:input source="camunda-document" target="data.memory.storage.type" />
+          <zeebe:input source="=20" target="data.memory.contextWindowSize" />
+          <zeebe:input source="=30" target="data.limits.maxModelCalls" />
+          <zeebe:input source="WAIT_FOR_TOOL_CALL_RESULTS" target="data.events.behavior" />
+          <zeebe:input source="text" target="data.response.format.type" />
+          <zeebe:input source="=false" target="data.response.format.parseJson" />
+          <zeebe:input source="=true" target="data.response.includeAssistantMessage" />
+          <zeebe:input source="=true" target="data.response.includeAgentContext" />
+          <zeebe:output source="=agent" target="agentResult" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="elementTemplateVersion" value="3" />
+          <zeebe:header key="elementTemplateId" value="io.camunda.connectors.agenticai.aiagent.jobworker.v1" />
+          <zeebe:header key="retryBackoff" value="PT0S" />
+        </zeebe:taskHeaders>
+        <zeebe:adHoc outputCollection="toolCallResults" outputElement="={&#10;  id: toolCall._meta.id,&#10;  name: toolCall._meta.name,&#10;  content: toolCallResult&#10;}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_03w4j3d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0uw0ncs</bpmn:outgoing>
+      <bpmn:callActivity id="CallActivity_AccountSupportAgent" name="Account Support Agent">
+        <bpmn:documentation>Sub agent to handle any account related requests. The agent will handle the request in full, including any customer communication. So when it ends you don't need to communicate with the customer any more but can end the task.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:calledElement processId="account-support-agent" propagateAllChildVariables="false" propagateAllParentVariables="false" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=put(userRequest, &#34;request&#34;, fromAi(toolCall.request, &#34;Rephrasing the account support request with all known details as if coming from the customer&#34;))" target="supportCase" />
+            <zeebe:input source="=sessionId" target="sessionId" />
+            <zeebe:input source="=&#34;Addressing Account request&#34;" target="botThinking" />
+            <zeebe:output source="=response" target="toolCallResult" />
+          </zeebe:ioMapping>
+          <zeebe:executionListeners>
+            <zeebe:executionListener eventType="start" type="chatbotThinking" />
+          </zeebe:executionListeners>
+        </bpmn:extensionElements>
+      </bpmn:callActivity>
+      <bpmn:callActivity id="CallActivity_LoanSupportAgent" name="Loan Support Agent">
+        <bpmn:documentation>Sub agent to handle any loan related requests. The agent will handle the request in full, including any customer communication. So when it ends you don't need to communicate with the customer any more but can end the task.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:calledElement processId="loan-support-agent" propagateAllChildVariables="false" propagateAllParentVariables="false" />
+          <zeebe:ioMapping>
+            <zeebe:input source="={user: user,&#10;request: toolCall.response}" target="supportCase" />
+            <zeebe:input source="=sessionId" target="sessionId" />
+            <zeebe:input source="=&#34;Addressing Loan request&#34;" target="botThinking" />
+          </zeebe:ioMapping>
+          <zeebe:executionListeners>
+            <zeebe:executionListener eventType="start" type="chatbotThinking" />
+          </zeebe:executionListeners>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1ifnokd</bpmn:incoming>
+      </bpmn:callActivity>
+      <bpmn:serviceTask id="Tool_AskCustomer" name="Ask customer" zeebe:modelerTemplate="chatbotReply" zeebe:modelerTemplateVersion="3" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzIwMDFfNTApIj4KPHBhdGggZD0iTTE3Ljk4ODYgMzEuODU3MUwxNiAzMC43MTQzTDIwLjU3MTQgMjIuNzE0M0gyNy40Mjg2QzI4LjAzNDggMjIuNzE0MyAyOC42MTYyIDIyLjQ3MzUgMjkuMDQ0OCAyMi4wNDQ4QzI5LjQ3MzUgMjEuNjE2MiAyOS43MTQzIDIxLjAzNDggMjkuNzE0MyAyMC40Mjg2VjYuNzE0MjhDMjkuNzE0MyA2LjEwODA3IDI5LjQ3MzUgNS41MjY2OSAyOS4wNDQ4IDUuMDk4MDRDMjguNjE2MiA0LjY2OTM4IDI4LjAzNDggNC40Mjg1NyAyNy40Mjg2IDQuNDI4NTdINC41NzE0M0MzLjk2NTIyIDQuNDI4NTcgMy4zODM4NCA0LjY2OTM4IDIuOTU1MTggNS4wOTgwNEMyLjUyNjUzIDUuNTI2NjkgMi4yODU3MSA2LjEwODA3IDIuMjg1NzEgNi43MTQyOFYyMC40Mjg2QzIuMjg1NzEgMjEuMDM0OCAyLjUyNjUzIDIxLjYxNjIgMi45NTUxOCAyMi4wNDQ4QzMuMzgzODQgMjIuNDczNSAzLjk2NTIyIDIyLjcxNDMgNC41NzE0MyAyMi43MTQzSDE0Ljg1NzFWMjVINC41NzE0M0MzLjM1OTAxIDI1IDIuMTk2MjUgMjQuNTE4NCAxLjMzODk0IDIzLjY2MTFDMC40ODE2MzEgMjIuODAzNyAwIDIxLjY0MSAwIDIwLjQyODZWNi43MTQyOEMwIDUuNTAxODYgMC40ODE2MzEgNC4zMzkxIDEuMzM4OTQgMy40ODE3OUMyLjE5NjI1IDIuNjI0NDggMy4zNTkwMSAyLjE0Mjg1IDQuNTcxNDMgMi4xNDI4NUgyNy40Mjg2QzI4LjY0MSAyLjE0Mjg1IDI5LjgwMzggMi42MjQ0OCAzMC42NjExIDMuNDgxNzlDMzEuNTE4NCA0LjMzOTEgMzIgNS41MDE4NiAzMiA2LjcxNDI4VjIwLjQyODZDMzIgMjEuNjQxIDMxLjUxODQgMjIuODAzNyAzMC42NjExIDIzLjY2MTFDMjkuODAzOCAyNC41MTg0IDI4LjY0MSAyNSAyNy40Mjg2IDI1SDIxLjg5NzFMMTcuOTg4NiAzMS44NTcxWiIgZmlsbD0iIzBGNjJGRSIvPgo8cGF0aCBkPSJNMjUuMTQyOSA5SDYuODU3MThWMTEuMjg1N0gyNS4xNDI5VjlaIiBmaWxsPSIjMEY2MkZFIi8+CjxwYXRoIGQ9Ik0xOC4yODU3IDE1Ljg1NzFINi44NTcxOFYxOC4xNDI5SDE4LjI4NTdWMTUuODU3MVoiIGZpbGw9IiMwRjYyRkUiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yMDAxXzUwIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=">
+        <bpmn:documentation>Use for ANY message that includes a question or clarification. If you’re asking the customer anything, you MUST use this tool.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="chatbotReply" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=true" target="waitResponse" />
+            <zeebe:input source="=fromAi(toolCall.response, &#34;The text response to reply to the customer&#34;)" target="chatbotMessage" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="Tool_InformCustomer" name="Inform customer" zeebe:modelerTemplate="chatbotReply" zeebe:modelerTemplateVersion="3" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzIwMDFfNTApIj4KPHBhdGggZD0iTTE3Ljk4ODYgMzEuODU3MUwxNiAzMC43MTQzTDIwLjU3MTQgMjIuNzE0M0gyNy40Mjg2QzI4LjAzNDggMjIuNzE0MyAyOC42MTYyIDIyLjQ3MzUgMjkuMDQ0OCAyMi4wNDQ4QzI5LjQ3MzUgMjEuNjE2MiAyOS43MTQzIDIxLjAzNDggMjkuNzE0MyAyMC40Mjg2VjYuNzE0MjhDMjkuNzE0MyA2LjEwODA3IDI5LjQ3MzUgNS41MjY2OSAyOS4wNDQ4IDUuMDk4MDRDMjguNjE2MiA0LjY2OTM4IDI4LjAzNDggNC40Mjg1NyAyNy40Mjg2IDQuNDI4NTdINC41NzE0M0MzLjk2NTIyIDQuNDI4NTcgMy4zODM4NCA0LjY2OTM4IDIuOTU1MTggNS4wOTgwNEMyLjUyNjUzIDUuNTI2NjkgMi4yODU3MSA2LjEwODA3IDIuMjg1NzEgNi43MTQyOFYyMC40Mjg2QzIuMjg1NzEgMjEuMDM0OCAyLjUyNjUzIDIxLjYxNjIgMi45NTUxOCAyMi4wNDQ4QzMuMzgzODQgMjIuNDczNSAzLjk2NTIyIDIyLjcxNDMgNC41NzE0MyAyMi43MTQzSDE0Ljg1NzFWMjVINC41NzE0M0MzLjM1OTAxIDI1IDIuMTk2MjUgMjQuNTE4NCAxLjMzODk0IDIzLjY2MTFDMC40ODE2MzEgMjIuODAzNyAwIDIxLjY0MSAwIDIwLjQyODZWNi43MTQyOEMwIDUuNTAxODYgMC40ODE2MzEgNC4zMzkxIDEuMzM4OTQgMy40ODE3OUMyLjE5NjI1IDIuNjI0NDggMy4zNTkwMSAyLjE0Mjg1IDQuNTcxNDMgMi4xNDI4NUgyNy40Mjg2QzI4LjY0MSAyLjE0Mjg1IDI5LjgwMzggMi42MjQ0OCAzMC42NjExIDMuNDgxNzlDMzEuNTE4NCA0LjMzOTEgMzIgNS41MDE4NiAzMiA2LjcxNDI4VjIwLjQyODZDMzIgMjEuNjQxIDMxLjUxODQgMjIuODAzNyAzMC42NjExIDIzLjY2MTFDMjkuODAzOCAyNC41MTg0IDI4LjY0MSAyNSAyNy40Mjg2IDI1SDIxLjg5NzFMMTcuOTg4NiAzMS44NTcxWiIgZmlsbD0iIzBGNjJGRSIvPgo8cGF0aCBkPSJNMjUuMTQyOSA5SDYuODU3MThWMTEuMjg1N0gyNS4xNDI5VjlaIiBmaWxsPSIjMEY2MkZFIi8+CjxwYXRoIGQ9Ik0xOC4yODU3IDE1Ljg1NzFINi44NTcxOFYxOC4xNDI5SDE4LjI4NTdWMTUuODU3MVoiIGZpbGw9IiMwRjYyRkUiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yMDAxXzUwIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=">
+        <bpmn:documentation>Use only to deliver final information/statement; NEVER include a question.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:input source="=false" target="waitResponse" />
+            <zeebe:input source="=fromAi(toolCall.response, &#34;The text response to reply to the customer&#34;)" target="chatbotMessage" />
+          </zeebe:ioMapping>
+          <zeebe:taskDefinition type="chatbotReply" retries="3" />
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:scriptTask id="GetDateAndTime" name="Get Date and Time">
+        <bpmn:documentation>Returns the current date and time including the timezone.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:script expression="=now()" resultVariable="toolCallResult" />
+        </bpmn:extensionElements>
+      </bpmn:scriptTask>
+      <bpmn:scriptTask id="SuperfluxProduct" name="Superflux Product Calculation">
+        <bpmn:documentation>Calculates the superflux product (a very complicated method only this tool can do) given two input numbers</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:script expression="=3 * (inputA + inputB)" resultVariable="toolCallResult" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=fromAi(toolCall.a, &#34;The first number to be superflux calculated.&#34;, &#34;number&#34;)" target="inputA" />
+            <zeebe:input source="=fromAi(toolCall.b, &#34;The second number to be superflux calculated.&#34;, &#34;number&#34;)" target="inputB" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+      </bpmn:scriptTask>
+      <bpmn:serviceTask id="Jokes_API" name="Jokes API" zeebe:modelerTemplate="io.camunda.connectors.HttpJson.v2" zeebe:modelerTemplateVersion="10" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjAzMzUgOC45OTk5N0MxNy4wMzM1IDEzLjQ0NzUgMTMuNDI4MSAxNy4wNTI5IDguOTgwNjUgMTcuMDUyOUM0LjUzMzE2IDE3LjA1MjkgMC45Mjc3NjUgMTMuNDQ3NSAwLjkyNzc2NSA4Ljk5OTk3QzAuOTI3NzY1IDQuNTUyNDggNC41MzMxNiAwLjk0NzA4MyA4Ljk4MDY1IDAuOTQ3MDgzQzEzLjQyODEgMC45NDcwODMgMTcuMDMzNSA0LjU1MjQ4IDE3LjAzMzUgOC45OTk5N1oiIGZpbGw9IiM1MDU1NjIiLz4KPHBhdGggZD0iTTQuOTMxMjYgMTQuMTU3MUw2Ljc4MTA2IDMuNzE0NzFIMTAuMTM3NUMxMS4xOTE3IDMuNzE0NzEgMTEuOTgyNCAzLjk4MzIzIDEyLjUwOTUgNC41MjAyN0MxMy4wNDY1IDUuMDQ3MzYgMTMuMzE1IDUuNzMzNTggMTMuMzE1IDYuNTc4OTJDMTMuMzE1IDcuNDQ0MTQgMTMuMDcxNCA4LjE1NTIyIDEyLjU4NDEgOC43MTIxNUMxMi4xMDY3IDkuMjU5MTMgMTEuNDU1MyA5LjYzNzA1IDEwLjYyOTggOS44NDU5TDEyLjA2MTkgMTQuMTU3MUgxMC4zMzE1TDkuMDMzNjQgMTAuMDI0OUg3LjI0MzUxTDYuNTEyNTQgMTQuMTU3MUg0LjkzMTI2Wk03LjQ5NzExIDguNTkyODFIOS4yNDI0OEM5Ljk5ODMyIDguNTkyODEgMTAuNTkwMSA4LjQyMzc0IDExLjAxNzcgOC4wODU2MUMxMS40NTUzIDcuNzM3NTMgMTEuNjc0MSA3LjI2NTEzIDExLjY3NDEgNi42Njg0MkMxMS42NzQxIDYuMTkxMDYgMTEuNTI0OSA1LjgxODExIDExLjIyNjUgNS41NDk1OUMxMC45MjgyIDUuMjcxMTMgMTAuNDU1OCA1LjEzMTkgOS44MDkzNiA1LjEzMTlIOC4xMDg3NEw3LjQ5NzExIDguNTkyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+        <bpmn:documentation>Fetches a random joke from a Jokes REST API</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="noAuth" target="authentication.type" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="https://v2.jokeapi.dev/joke/Any?format=txt&#38;safe-mode" target="url" />
+            <zeebe:input source="=false" target="storeResponse" />
+            <zeebe:input source="=20" target="connectionTimeoutInSeconds" />
+            <zeebe:input source="=20" target="readTimeoutInSeconds" />
+            <zeebe:input source="=false" target="ignoreNullValues" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="resultExpression" value="={&#10;  toolCallResult: response.body&#10;}" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1t8jsa6</bpmn:incoming>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="LoadUserByID" name="Load user by ID" zeebe:modelerTemplate="io.camunda.connectors.HttpJson.v2" zeebe:modelerTemplateVersion="10" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjAzMzUgOC45OTk5N0MxNy4wMzM1IDEzLjQ0NzUgMTMuNDI4MSAxNy4wNTI5IDguOTgwNjUgMTcuMDUyOUM0LjUzMzE2IDE3LjA1MjkgMC45Mjc3NjUgMTMuNDQ3NSAwLjkyNzc2NSA4Ljk5OTk3QzAuOTI3NzY1IDQuNTUyNDggNC41MzMxNiAwLjk0NzA4MyA4Ljk4MDY1IDAuOTQ3MDgzQzEzLjQyODEgMC45NDcwODMgMTcuMDMzNSA0LjU1MjQ4IDE3LjAzMzUgOC45OTk5N1oiIGZpbGw9IiM1MDU1NjIiLz4KPHBhdGggZD0iTTQuOTMxMjYgMTQuMTU3MUw2Ljc4MTA2IDMuNzE0NzFIMTAuMTM3NUMxMS4xOTE3IDMuNzE0NzEgMTEuOTgyNCAzLjk4MzIzIDEyLjUwOTUgNC41MjAyN0MxMy4wNDY1IDUuMDQ3MzYgMTMuMzE1IDUuNzMzNTggMTMuMzE1IDYuNTc4OTJDMTMuMzE1IDcuNDQ0MTQgMTMuMDcxNCA4LjE1NTIyIDEyLjU4NDEgOC43MTIxNUMxMi4xMDY3IDkuMjU5MTMgMTEuNDU1MyA5LjYzNzA1IDEwLjYyOTggOS44NDU5TDEyLjA2MTkgMTQuMTU3MUgxMC4zMzE1TDkuMDMzNjQgMTAuMDI0OUg3LjI0MzUxTDYuNTEyNTQgMTQuMTU3MUg0LjkzMTI2Wk03LjQ5NzExIDguNTkyODFIOS4yNDI0OEM5Ljk5ODMyIDguNTkyODEgMTAuNTkwMSA4LjQyMzc0IDExLjAxNzcgOC4wODU2MUMxMS40NTUzIDcuNzM3NTMgMTEuNjc0MSA3LjI2NTEzIDExLjY3NDEgNi42Njg0MkMxMS42NzQxIDYuMTkxMDYgMTEuNTI0OSA1LjgxODExIDExLjIyNjUgNS41NDk1OUMxMC45MjgyIDUuMjcxMTMgMTAuNDU1OCA1LjEzMTkgOS44MDkzNiA1LjEzMTlIOC4xMDg3NEw3LjQ5NzExIDguNTkyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+        <bpmn:documentation>Loads a user by ID</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="0" />
+          <zeebe:ioMapping>
+            <zeebe:input source="noAuth" target="authentication.type" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="=&#34;https://jsonplaceholder.typicode.com/users/&#34; + string(fromAi(toolCall.id, &#34;The user ID&#34;, &#34;number&#34;))" target="url" />
+            <zeebe:input source="=false" target="storeResponse" />
+            <zeebe:input source="20" target="connectionTimeoutInSeconds" />
+            <zeebe:input source="20" target="readTimeoutInSeconds" />
+            <zeebe:input source="=false" target="ignoreNullValues" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="resultExpression" value="={&#10;  toolCallResult: if (is defined(response.body.id)) then response.body else &#34;User not found&#34;&#10;}" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="ListUsers" name="List users" zeebe:modelerTemplate="io.camunda.connectors.HttpJson.v2" zeebe:modelerTemplateVersion="10" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjAzMzUgOC45OTk5N0MxNy4wMzM1IDEzLjQ0NzUgMTMuNDI4MSAxNy4wNTI5IDguOTgwNjUgMTcuMDUyOUM0LjUzMzE2IDE3LjA1MjkgMC45Mjc3NjUgMTMuNDQ3NSAwLjkyNzc2NSA4Ljk5OTk3QzAuOTI3NzY1IDQuNTUyNDggNC41MzMxNiAwLjk0NzA4MyA4Ljk4MDY1IDAuOTQ3MDgzQzEzLjQyODEgMC45NDcwODMgMTcuMDMzNSA0LjU1MjQ4IDE3LjAzMzUgOC45OTk5N1oiIGZpbGw9IiM1MDU1NjIiLz4KPHBhdGggZD0iTTQuOTMxMjYgMTQuMTU3MUw2Ljc4MTA2IDMuNzE0NzFIMTAuMTM3NUMxMS4xOTE3IDMuNzE0NzEgMTEuOTgyNCAzLjk4MzIzIDEyLjUwOTUgNC41MjAyN0MxMy4wNDY1IDUuMDQ3MzYgMTMuMzE1IDUuNzMzNTggMTMuMzE1IDYuNTc4OTJDMTMuMzE1IDcuNDQ0MTQgMTMuMDcxNCA4LjE1NTIyIDEyLjU4NDEgOC43MTIxNUMxMi4xMDY3IDkuMjU5MTMgMTEuNDU1MyA5LjYzNzA1IDEwLjYyOTggOS44NDU5TDEyLjA2MTkgMTQuMTU3MUgxMC4zMzE1TDkuMDMzNjQgMTAuMDI0OUg3LjI0MzUxTDYuNTEyNTQgMTQuMTU3MUg0LjkzMTI2Wk03LjQ5NzExIDguNTkyODFIOS4yNDI0OEM5Ljk5ODMyIDguNTkyODEgMTAuNTkwMSA4LjQyMzc0IDExLjAxNzcgOC4wODU2MUMxMS40NTUzIDcuNzM3NTMgMTEuNjc0MSA3LjI2NTEzIDExLjY3NDEgNi42Njg0MkMxMS42NzQxIDYuMTkxMDYgMTEuNTI0OSA1LjgxODExIDExLjIyNjUgNS41NDk1OUMxMC45MjgyIDUuMjcxMTMgMTAuNDU1OCA1LjEzMTkgOS44MDkzNiA1LjEzMTlIOC4xMDg3NEw3LjQ5NzExIDguNTkyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+        <bpmn:documentation>Lists all available users. More contact details (such as e-mail addresses) can be loaded up by looking up the individual user by ID.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=false" target="ignoreNullValues" />
+            <zeebe:input source="noAuth" target="authentication.type" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="https://jsonplaceholder.typicode.com/users" target="url" />
+            <zeebe:input source="=false" target="storeResponse" />
+            <zeebe:input source="20" target="connectionTimeoutInSeconds" />
+            <zeebe:input source="20" target="readTimeoutInSeconds" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="resultExpression" value="={&#10;  toolCallResult: for user in response.body return {&#10;    id: user.id,&#10;    name: user.name,&#10;    username: user.username&#10;  }&#10;}" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:serviceTask id="Search_Recipe" name="Search recipe" zeebe:modelerTemplate="io.camunda.connectors.HttpJson.v2" zeebe:modelerTemplateVersion="10" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjAzMzUgOC45OTk5N0MxNy4wMzM1IDEzLjQ0NzUgMTMuNDI4MSAxNy4wNTI5IDguOTgwNjUgMTcuMDUyOUM0LjUzMzE2IDE3LjA1MjkgMC45Mjc3NjUgMTMuNDQ3NSAwLjkyNzc2NSA4Ljk5OTk3QzAuOTI3NzY1IDQuNTUyNDggNC41MzMxNiAwLjk0NzA4MyA4Ljk4MDY1IDAuOTQ3MDgzQzEzLjQyODEgMC45NDcwODMgMTcuMDMzNSA0LjU1MjQ4IDE3LjAzMzUgOC45OTk5N1oiIGZpbGw9IiM1MDU1NjIiLz4KPHBhdGggZD0iTTQuOTMxMjYgMTQuMTU3MUw2Ljc4MTA2IDMuNzE0NzFIMTAuMTM3NUMxMS4xOTE3IDMuNzE0NzEgMTEuOTgyNCAzLjk4MzIzIDEyLjUwOTUgNC41MjAyN0MxMy4wNDY1IDUuMDQ3MzYgMTMuMzE1IDUuNzMzNTggMTMuMzE1IDYuNTc4OTJDMTMuMzE1IDcuNDQ0MTQgMTMuMDcxNCA4LjE1NTIyIDEyLjU4NDEgOC43MTIxNUMxMi4xMDY3IDkuMjU5MTMgMTEuNDU1MyA5LjYzNzA1IDEwLjYyOTggOS44NDU5TDEyLjA2MTkgMTQuMTU3MUgxMC4zMzE1TDkuMDMzNjQgMTAuMDI0OUg3LjI0MzUxTDYuNTEyNTQgMTQuMTU3MUg0LjkzMTI2Wk03LjQ5NzExIDguNTkyODFIOS4yNDI0OEM5Ljk5ODMyIDguNTkyODEgMTAuNTkwMSA4LjQyMzc0IDExLjAxNzcgOC4wODU2MUMxMS40NTUzIDcuNzM3NTMgMTEuNjc0MSA3LjI2NTEzIDExLjY3NDEgNi42Njg0MkMxMS42NzQxIDYuMTkxMDYgMTEuNTI0OSA1LjgxODExIDExLjIyNjUgNS41NDk1OUMxMC45MjgyIDUuMjcxMTMgMTAuNDU1OCA1LjEzMTkgOS44MDkzNiA1LjEzMTlIOC4xMDg3NEw3LjQ5NzExIDguNTkyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+        <bpmn:documentation>Searches a recipe given a search query</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="noAuth" target="authentication.type" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="https://dummyjson.com/recipes/search" target="url" />
+            <zeebe:input source="={&#10;  q: fromAi(toolCall.searchQuery, &#34;The query describing which recipe to search (e.g. a specific dish or the cuisine).&#34;)&#10;}" target="queryParameters" />
+            <zeebe:input source="=false" target="storeResponse" />
+            <zeebe:input source="20" target="connectionTimeoutInSeconds" />
+            <zeebe:input source="20" target="readTimeoutInSeconds" />
+            <zeebe:input source="=false" target="ignoreNullValues" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="resultExpression" value="={&#10;  toolCallResult: if (count(response.body.recipes) &#62; 0) then response.body.recipes else &#34;No result found.&#34;&#10;}" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:businessRuleTask id="Activity_0f8w96c" name="Check loan policy">
+        <bpmn:documentation>Sub agent to handle any loan related requests. The agent will handle the request in full, including any customer communication. So when it ends you don't need to communicate with the customer any more but can end the task.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:calledDecision decisionId="policies" resultVariable="decision" />
+          <zeebe:ioMapping>
+            <zeebe:input source="loan" target="action" />
+            <zeebe:input source="&#34;Checking permissions to request a loan&#34;" target="botThinking" />
+            <zeebe:input source="=fromAi(toolCall.response, &#34;Rephrase the loan request with all known details as if coming from the customer&#34;)" target="loanRequest" />
+          </zeebe:ioMapping>
+          <zeebe:executionListeners>
+            <zeebe:executionListener eventType="start" type="chatbotThinking" />
+          </zeebe:executionListeners>
+        </bpmn:extensionElements>
+        <bpmn:outgoing>Flow_0jtr4de</bpmn:outgoing>
+      </bpmn:businessRuleTask>
+      <bpmn:sequenceFlow id="Flow_0jtr4de" sourceRef="Activity_0f8w96c" targetRef="Gateway_0aqyo8e" />
+      <bpmn:businessRuleTask id="Activity_1knq1jj" name="Check joke policy">
+        <bpmn:documentation>Fetches a random joke from a Jokes REST API</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:calledDecision decisionId="policies" resultVariable="decision" />
+          <zeebe:ioMapping>
+            <zeebe:input source="joke" target="action" />
+            <zeebe:input source="&#34;Checking permissions to access the joke system&#34;" target="botThinking" />
+          </zeebe:ioMapping>
+          <zeebe:executionListeners>
+            <zeebe:executionListener eventType="start" type="chatbotThinking" />
+          </zeebe:executionListeners>
+        </bpmn:extensionElements>
+        <bpmn:outgoing>Flow_06mfb8k</bpmn:outgoing>
+      </bpmn:businessRuleTask>
+      <bpmn:sequenceFlow id="Flow_06mfb8k" sourceRef="Activity_1knq1jj" targetRef="Gateway_0b1jq9s" />
+      <bpmn:exclusiveGateway id="Gateway_0b1jq9s" name="joke allowed?" default="Flow_1t8jsa6">
+        <bpmn:incoming>Flow_06mfb8k</bpmn:incoming>
+        <bpmn:outgoing>Flow_1t8jsa6</bpmn:outgoing>
+        <bpmn:outgoing>Flow_0y0lx1f</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_1t8jsa6" name="yes" sourceRef="Gateway_0b1jq9s" targetRef="Jokes_API" />
+      <bpmn:sequenceFlow id="Flow_0y0lx1f" name="no" sourceRef="Gateway_0b1jq9s" targetRef="Activity_14ktq76">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=decision="rejected"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:scriptTask id="Activity_14ktq76" name="Reject joke demand">
+        <bpmn:extensionElements>
+          <zeebe:script expression="={&#34;result&#34;:&#34;rejected&#34;, &#34;explanation&#34;:&#34;User &#34;+user+&#34; is not allowed to ask for jokes&#34;}" resultVariable="toolCallResult" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0y0lx1f</bpmn:incoming>
+      </bpmn:scriptTask>
+      <bpmn:exclusiveGateway id="Gateway_0aqyo8e" name="loan application allowed?" default="Flow_1ifnokd">
+        <bpmn:incoming>Flow_0jtr4de</bpmn:incoming>
+        <bpmn:outgoing>Flow_1ifnokd</bpmn:outgoing>
+        <bpmn:outgoing>Flow_0zodjs3</bpmn:outgoing>
+      </bpmn:exclusiveGateway>
+      <bpmn:sequenceFlow id="Flow_1ifnokd" name="yes" sourceRef="Gateway_0aqyo8e" targetRef="CallActivity_LoanSupportAgent" />
+      <bpmn:sequenceFlow id="Flow_0zodjs3" name="no" sourceRef="Gateway_0aqyo8e" targetRef="Activity_0vlg961">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=decision="rejected"</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:scriptTask id="Activity_0vlg961" name="Reject loan demand">
+        <bpmn:extensionElements>
+          <zeebe:script expression="={&#34;result&#34;:&#34;rejected&#34;, &#34;explanation&#34;:&#34;User &#34;+user+&#34; is not allowed to apply for a loan&#34;}" resultVariable="toolCallResult" />
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_0zodjs3</bpmn:incoming>
+      </bpmn:scriptTask>
+      <bpmn:scriptTask id="Tool_defineChatTopic" name="Define chat topic">
+        <bpmn:documentation>Use only to define the chat topic that will be used to give a comprehensible name to the chat session in an history browser. That tool should be used only once when you think you have a good understanding of what the customer want to know, achieve, etc.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:script expression="=&#34;&#34;" resultVariable="nothing" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=fromAi(toolCall.response, &#34;A synthetic rephrasing of the topic in a very few words&#34;)" target="chatTopic" />
+            <zeebe:input source="&#34;Defining the main topic&#34;" target="botThinking" />
+            <zeebe:output source="=toolCall.response" target="chatTopic" />
+            <zeebe:output source="={chatTopicStatus:&#34;defined&#34;, chatTopic: toolCall.response}" target="toolCallResult" />
+          </zeebe:ioMapping>
+          <zeebe:executionListeners>
+            <zeebe:executionListener eventType="start" type="chatbotThinking" />
+          </zeebe:executionListeners>
+        </bpmn:extensionElements>
+      </bpmn:scriptTask>
+    </bpmn:adHocSubProcess>
+    <bpmn:sequenceFlow id="Flow_0qg6me5" sourceRef="StartEvent_1" targetRef="Activity_00mbzle" />
+    <bpmn:sequenceFlow id="Flow_0uw0ncs" sourceRef="AI_CustomerSupportAgent" targetRef="Activity_0ei8bca" />
+    <bpmn:serviceTask id="Activity_0ei8bca" name="Inform&#10;customer" zeebe:modelerTemplate="chatbotReply" zeebe:modelerTemplateVersion="3" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzIwMDFfNTApIj4KPHBhdGggZD0iTTE3Ljk4ODYgMzEuODU3MUwxNiAzMC43MTQzTDIwLjU3MTQgMjIuNzE0M0gyNy40Mjg2QzI4LjAzNDggMjIuNzE0MyAyOC42MTYyIDIyLjQ3MzUgMjkuMDQ0OCAyMi4wNDQ4QzI5LjQ3MzUgMjEuNjE2MiAyOS43MTQzIDIxLjAzNDggMjkuNzE0MyAyMC40Mjg2VjYuNzE0MjhDMjkuNzE0MyA2LjEwODA3IDI5LjQ3MzUgNS41MjY2OSAyOS4wNDQ4IDUuMDk4MDRDMjguNjE2MiA0LjY2OTM4IDI4LjAzNDggNC40Mjg1NyAyNy40Mjg2IDQuNDI4NTdINC41NzE0M0MzLjk2NTIyIDQuNDI4NTcgMy4zODM4NCA0LjY2OTM4IDIuOTU1MTggNS4wOTgwNEMyLjUyNjUzIDUuNTI2NjkgMi4yODU3MSA2LjEwODA3IDIuMjg1NzEgNi43MTQyOFYyMC40Mjg2QzIuMjg1NzEgMjEuMDM0OCAyLjUyNjUzIDIxLjYxNjIgMi45NTUxOCAyMi4wNDQ4QzMuMzgzODQgMjIuNDczNSAzLjk2NTIyIDIyLjcxNDMgNC41NzE0MyAyMi43MTQzSDE0Ljg1NzFWMjVINC41NzE0M0MzLjM1OTAxIDI1IDIuMTk2MjUgMjQuNTE4NCAxLjMzODk0IDIzLjY2MTFDMC40ODE2MzEgMjIuODAzNyAwIDIxLjY0MSAwIDIwLjQyODZWNi43MTQyOEMwIDUuNTAxODYgMC40ODE2MzEgNC4zMzkxIDEuMzM4OTQgMy40ODE3OUMyLjE5NjI1IDIuNjI0NDggMy4zNTkwMSAyLjE0Mjg1IDQuNTcxNDMgMi4xNDI4NUgyNy40Mjg2QzI4LjY0MSAyLjE0Mjg1IDI5LjgwMzggMi42MjQ0OCAzMC42NjExIDMuNDgxNzlDMzEuNTE4NCA0LjMzOTEgMzIgNS41MDE4NiAzMiA2LjcxNDI4VjIwLjQyODZDMzIgMjEuNjQxIDMxLjUxODQgMjIuODAzNyAzMC42NjExIDIzLjY2MTFDMjkuODAzOCAyNC41MTg0IDI4LjY0MSAyNSAyNy40Mjg2IDI1SDIxLjg5NzFMMTcuOTg4NiAzMS44NTcxWiIgZmlsbD0iIzBGNjJGRSIvPgo8cGF0aCBkPSJNMjUuMTQyOSA5SDYuODU3MThWMTEuMjg1N0gyNS4xNDI5VjlaIiBmaWxsPSIjMEY2MkZFIi8+CjxwYXRoIGQ9Ik0xOC4yODU3IDE1Ljg1NzFINi44NTcxOFYxOC4xNDI5SDE4LjI4NTdWMTUuODU3MVoiIGZpbGw9IiMwRjYyRkUiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yMDAxXzUwIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=">
+      <bpmn:documentation>Use only to deliver final information/statement; NEVER include a question.</bpmn:documentation>
+      <bpmn:extensionElements>
+        <zeebe:ioMapping>
+          <zeebe:input source="=false" target="waitResponse" />
+          <zeebe:input source="&#34;Chat session is terminated&#34;" target="chatbotMessage" />
+        </zeebe:ioMapping>
+        <zeebe:taskDefinition type="chatbotReply" retries="3" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0uw0ncs</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xiltny</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1xiltny" sourceRef="Activity_0ei8bca" targetRef="Event_0i39jej" />
+    <bpmn:endEvent id="Event_0i39jej">
+      <bpmn:incoming>Flow_1xiltny</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_03w4j3d" sourceRef="Activity_00mbzle" targetRef="AI_CustomerSupportAgent" />
+    <bpmn:scriptTask id="Activity_00mbzle" name="Keep author">
+      <bpmn:extensionElements>
+        <zeebe:script expression="=userRequest.author" resultVariable="user" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0qg6me5</bpmn:incoming>
+      <bpmn:outgoing>Flow_03w4j3d</bpmn:outgoing>
+    </bpmn:scriptTask>
+  </bpmn:process>
+  <bpmn:message id="Message_3mpc025" name="ai-agent-message">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=&#34;ai-agent-message&#34;" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmn:message id="Message_25s97rq" name="MessageUpdate">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=uniqueChatId" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmn:error id="Error_1j9c0bh" name="Error_22800vj" />
+  <bpmn:escalation id="Escalation_0cv802a" name="Escalation_0cv802a" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="chatbot">
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_171qsbj" bpmnElement="Activity_0ei8bca">
+        <dc:Bounds x="900" y="100" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0xii2k0_di" bpmnElement="Event_0i39jej">
+        <dc:Bounds x="1052" y="122" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ptp8t0_di" bpmnElement="Activity_00mbzle">
+        <dc:Bounds x="250" y="100" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0qhv81v_di" bpmnElement="AI_CustomerSupportAgent" isExpanded="true">
+        <dc:Bounds x="420" y="80" width="430" height="980" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04qwkmr_di" bpmnElement="CallActivity_AccountSupportAgent">
+        <dc:Bounds x="690" y="480" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jcnlqd_di" bpmnElement="CallActivity_LoanSupportAgent">
+        <dc:Bounds x="690" y="600" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_04h7xne" bpmnElement="Tool_AskCustomer">
+        <dc:Bounds x="450" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1ydoyr5" bpmnElement="Tool_InformCustomer">
+        <dc:Bounds x="570" y="120" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1sbkoqq_di" bpmnElement="GetDateAndTime">
+        <dc:Bounds x="450" y="240" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0x0a1hy" bpmnElement="SuperfluxProduct">
+        <dc:Bounds x="570" y="240" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1l8tp85_di" bpmnElement="Jokes_API">
+        <dc:Bounds x="690" y="810" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1fihe00" bpmnElement="LoadUserByID">
+        <dc:Bounds x="450" y="350" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kkpyxf_di" bpmnElement="ListUsers">
+        <dc:Bounds x="570" y="350" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0d8luif_di" bpmnElement="Search_Recipe">
+        <dc:Bounds x="690" y="240" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0800i7q_di" bpmnElement="Activity_0f8w96c">
+        <dc:Bounds x="450" y="600" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_02kxfmy" bpmnElement="Activity_1knq1jj">
+        <dc:Bounds x="450" y="810" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0b1jq9s_di" bpmnElement="Gateway_0b1jq9s" isMarkerVisible="true">
+        <dc:Bounds x="595" y="825" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="586" y="801" width="67" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13g1q1j_di" bpmnElement="Activity_14ktq76">
+        <dc:Bounds x="690" y="920" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0aqyo8e_di" bpmnElement="Gateway_0aqyo8e" isMarkerVisible="true">
+        <dc:Bounds x="595" y="615" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="582" y="585" width="77" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14spl4u_di" bpmnElement="Activity_0vlg961">
+        <dc:Bounds x="690" y="710" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dkfan7_di" bpmnElement="Tool_defineChatTopic">
+        <dc:Bounds x="690" y="120" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1ifnokd_di" bpmnElement="Flow_1ifnokd">
+        <di:waypoint x="645" y="640" />
+        <di:waypoint x="690" y="640" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="659" y="622" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1t8jsa6_di" bpmnElement="Flow_1t8jsa6">
+        <di:waypoint x="645" y="850" />
+        <di:waypoint x="690" y="850" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="659" y="832" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jtr4de_di" bpmnElement="Flow_0jtr4de">
+        <di:waypoint x="550" y="640" />
+        <di:waypoint x="595" y="640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06mfb8k_di" bpmnElement="Flow_06mfb8k">
+        <di:waypoint x="550" y="850" />
+        <di:waypoint x="595" y="850" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0y0lx1f_di" bpmnElement="Flow_0y0lx1f">
+        <di:waypoint x="620" y="875" />
+        <di:waypoint x="620" y="960" />
+        <di:waypoint x="690" y="960" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="629" y="915" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zodjs3_di" bpmnElement="Flow_0zodjs3">
+        <di:waypoint x="620" y="665" />
+        <di:waypoint x="620" y="750" />
+        <di:waypoint x="690" y="750" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="629" y="705" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qg6me5_di" bpmnElement="Flow_0qg6me5">
+        <di:waypoint x="188" y="140" />
+        <di:waypoint x="250" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03w4j3d_di" bpmnElement="Flow_03w4j3d">
+        <di:waypoint x="350" y="140" />
+        <di:waypoint x="420" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0uw0ncs_di" bpmnElement="Flow_0uw0ncs">
+        <di:waypoint x="850" y="140" />
+        <di:waypoint x="900" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xiltny_di" bpmnElement="Flow_1xiltny">
+        <di:waypoint x="1000" y="140" />
+        <di:waypoint x="1052" y="140" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

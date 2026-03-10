@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: midas
+  datasource:
+    url: jdbc:h2:file:./data/midasdb;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  h2:
+    console:
+      enabled: false
+  servlet.multipart:
+    enabled: true
+    max-file-size: 256MB
+    max-request-size: 512MB
+  thymeleaf.prefix: classpath:/static/
+
+server:
+  port: ${PORT:8081}
+  error:
+    whitelabel:
+      enabled: false
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1048576
+
+camunda:
+  client:
+    mode: self-managed
+    cluster-id: ${CLIENT_CLOUD_CLUSTER_ID}
+    region: ${CLIENT_CLOUD_REGION}
+    domain: ${CAMUNDA_DOMAIN}
+    grpc-address: grpcs://${CLIENT_CLOUD_CLUSTER_ID}.${CLIENT_CLOUD_REGION}.zeebe.${CAMUNDA_DOMAIN}:443
+    rest-address: https://${CLIENT_CLOUD_REGION}.zeebe.${CAMUNDA_DOMAIN}/${CLIENT_CLOUD_CLUSTER_ID}
+    prefer-rest-over-grpc: false
+    auth:
+      method: oidc
+      client-id: ${CLIENT_CLOUD_CLIENT_ID}
+      client-secret: ${CLIENT_CLOUD_CLIENT_SECRET}
+      token-url: https://login.cloud.${CAMUNDA_DOMAIN}/oauth/token
+      audience: zeebe.${CAMUNDA_DOMAIN}
